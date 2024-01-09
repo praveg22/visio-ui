@@ -33,12 +33,9 @@ function BasicLayout({ image, children }) {
   return (
     <PageLayout>
       <DefaultNavbar
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/material-dashboard-react",
-          label: "free download",
-          color: "dark",
-        }}
+        action={false}
+        // eslint-disable-next-line
+      
       />
       <MDBox
         position="absolute"
@@ -63,7 +60,7 @@ function BasicLayout({ image, children }) {
           </Grid>
         </Grid>
       </MDBox>
-      <Footer light />
+      {/* <Footer light /> */}
     </PageLayout>
   );
 }

@@ -1,19 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/function-component-definition */
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -50,16 +35,16 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "author", accessor: "author", width: "45%", align: "left" },
-      { Header: "function", accessor: "function", align: "left" },
-      { Header: "status", accessor: "status", align: "center" },
-      { Header: "employed", accessor: "employed", align: "center" },
-      { Header: "action", accessor: "action", align: "center" },
+      { Header: "report name", accessor: "author", width: "45%", align: "left" },
+      // { Header: "function", accessor: "function", align: "left" },
+      // { Header: "status", accessor: "status", align: "center" },
+      { Header: "date", accessor: "employed", align: "center" },
+      // { Header: "action", accessor: "action", align: "center" },
     ],
 
     rows: [
       {
-        author: <Author image={team2} name="John Michael" email="john@creative-tim.com" />,
+        author: <Author image={team2} name="John Michael" email="john@gmail.com" />,
         function: <Job title="Manager" description="Organization" />,
         status: (
           <MDBox ml={-1}>
@@ -78,7 +63,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team3} name="Alexa Liras" email="alexa@creative-tim.com" />,
+        author: <Author image={team3} name="Alexa Liras" email="alexa@gmail.com" />,
         function: <Job title="Programator" description="Developer" />,
         status: (
           <MDBox ml={-1}>
@@ -97,7 +82,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team4} name="Laurent Perrier" email="laurent@creative-tim.com" />,
+        author: <Author image={team4} name="Laurent Perrier" email="laurent@gmail.com" />,
         function: <Job title="Executive" description="Projects" />,
         status: (
           <MDBox ml={-1}>
@@ -116,7 +101,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team3} name="Michael Levi" email="michael@creative-tim.com" />,
+        author: <Author image={team3} name="Michael Levi" email="michael@gmail.com" />,
         function: <Job title="Programator" description="Developer" />,
         status: (
           <MDBox ml={-1}>
@@ -135,7 +120,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team3} name="Richard Gran" email="richard@creative-tim.com" />,
+        author: <Author image={team3} name="Richard Gran" email="richard@gmail.com" />,
         function: <Job title="Manager" description="Executive" />,
         status: (
           <MDBox ml={-1}>
@@ -154,7 +139,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team4} name="Miriam Eric" email="miriam@creative-tim.com" />,
+        author: <Author image={team4} name="Miriam Eric" email="miriam@gmail.com" />,
         function: <Job title="Programator" description="Developer" />,
         status: (
           <MDBox ml={-1}>
