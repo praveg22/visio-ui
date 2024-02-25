@@ -1,0 +1,9 @@
+.report-link {
+    text-decoration: underline; /* Add underline */
+    color: blue; /* Change text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .report-link:hover {
+    color: darkblue; /* Change text color on hover */
+  }

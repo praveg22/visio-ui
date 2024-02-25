@@ -12,6 +12,7 @@ import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import GenerateReport from "layouts/generate-report";
 
 const routes = [
   // {
@@ -35,8 +36,8 @@ const routes = [
     name: "Generate Report",
     key: "generatereport",
     icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/billing",
-     component: <Billing />,
+    route: "/generate-report",
+     component: <GenerateReport />,
   },
   // {
   //   type: "collapse",
