@@ -46,7 +46,7 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            {report.createdAt}
+            {new Date(report.createdAt).toLocaleDateString()}
           </MDTypography>
         ),
       };
