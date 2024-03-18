@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useNavigate} from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -34,11 +34,17 @@ import createCache from "@emotion/cache";
 import routes from "routes";
 
 // Material Dashboard 2 React contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
+import {
+  useMaterialUIController,
+  setMiniSidenav,
+  setOpenConfigurator,
+} from "context";
 
 // Images
 import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
+
+import SignIn from "layouts/authentication/sign-in";
 
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
@@ -55,6 +61,8 @@ export default function App() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
+
+  const navigate = useNavigate();
 
   // Cache for the rtl
   useMemo(() => {
@@ -83,7 +91,8 @@ export default function App() {
   };
 
   // Change the openConfigurator state
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const handleConfiguratorOpen = () =>
+    setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -96,18 +105,66 @@ export default function App() {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
+  const token = localStorage.getItem("token");
+  useEffect(()=>{
+      // console.log(token, !token);
+      if (!token) {
+        navigate("/authentication/sign-in")
+      }
+  },[])
+
+  const getRoutes = (allRoutes) =>{
+    // console.log(allRoutes)
+    // if(!token){
+    //   return (
+    //     <Route
+    //       exact
+    //       path="/authentication/sign-in"
+    //       element={<SignIn />}
+    //       key="sign-in"
+    //     />
+    //   );
+    // }
+    return allRoutes.map((route) => {
       if (route.collapse) {
         return getRoutes(route.collapse);
       }
 
+      // key: "sign-in",
+      // icon: <Icon fontSize="small">login</Icon>,
+      // route: "/authentication/sign-in",
+      // component: <SignIn />,
+
+      // const token = localStorage.getItem("token");
+      // console.log(token, !token);
+      // if (!token && route.route) {
+      //   return (
+      //     <Route
+      //       exact
+      //       path="/authentication/sign-in"
+      //       element={<SignIn />}
+      //       key="sign-in"
+      //     />
+      //   );
+      // }
+
       if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
+        return (
+          <Route
+            exact
+            path={route.route}
+            element={route.component}
+            key={route.key}
+          />
+        );
       }
 
       return null;
     });
+
+  }
+
+    
 
   const configsButton = (
     <MDBox
@@ -141,7 +198,11 @@ export default function App() {
           <>
             <Sidenav
               color={sidenavColor}
-              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+              brand={
+                (transparentSidenav && !darkMode) || whiteSidenav
+                  ? brandDark
+                  : brandWhite
+              }
               brandName="Visio"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
@@ -165,7 +226,11 @@ export default function App() {
         <>
           <Sidenav
             color={sidenavColor}
-            brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+            brand={
+              (transparentSidenav && !darkMode) || whiteSidenav
+                ? brandDark
+                : brandWhite
+            }
             brandName="Visio"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}

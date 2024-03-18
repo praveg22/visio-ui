@@ -53,9 +53,12 @@ function Basic() {
         password: password,
       }, { headers });
 
-      console.log("Sign-in successful:", response.data);
+      // console.log("Sign-in successful:", response.data);
+      if(response){
+        localStorage.setItem("token", response.data.user._id)
+        navigate("/tables")
+      }
 
-      navigate("/tables")
     } catch (error) {
       // console.log("heeeyyyy")
       console.error("Sign-in error:", error.message);
