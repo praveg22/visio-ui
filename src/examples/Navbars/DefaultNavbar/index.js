@@ -65,6 +65,7 @@ function DefaultNavbar({ transparent, light, action }) {
   return (
     <Container>
       <MDBox
+       
         py={1}
         px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
         my={3}
@@ -73,7 +74,7 @@ function DefaultNavbar({ transparent, light, action }) {
         borderRadius="lg"
         shadow={transparent ? "none" : "md"}
         color={light ? "white" : "dark"}
-        display="flex"
+        display="none"
         justifyContent="space-between"
         alignItems="center"
         position="absolute"

@@ -52,7 +52,7 @@ export default function Data() {
             key={index}
             variant="text"
             color="info"
-            onClick={() => openModal1(report.writtenReportFile)}
+            onClick={() => window.open(report.writtenReportFile)}
           >
             {report.reportName}
           </MDButton>

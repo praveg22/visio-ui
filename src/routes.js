@@ -13,6 +13,7 @@ import SignUp from "layouts/authentication/sign-up";
 // @mui icons
 import Icon from "@mui/material/Icon";
 import GenerateReport from "layouts/generate-report";
+import Slider from "layouts/slider";
 
 const routes = [
   // {
@@ -25,17 +26,26 @@ const routes = [
   // },
   {
     type: "collapse",
+    name: "Home",
+    key: "home",
+    icon: <Icon fontSize="small">home</Icon>,
+    route: "/home",
+    component: <Slider />,
+  },
+  {
+    type: "collapse",
     name: "Fetch Reports",
     key: "tables",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/tables",
     component: <Tables />,
   },
+  
   {
     type: "collapse",
     name: "Generate Report",
     key: "generatereport",
-    icon: <Icon fontSize="small">table_view</Icon>,
+    icon: <Icon fontSize="small">upload_view</Icon>,
     route: "/generate-report",
      component: <GenerateReport />,
   },
@@ -71,14 +81,14 @@ const routes = [
     route: "/profile",
     component: <Profile />,
   },
-  {
-    type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    icon: <Icon fontSize="small">login</Icon>,
-    route: "/authentication/sign-in",
-    component: <SignIn />,
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Sign In",
+  //   key: "sign-in",
+  //   icon: <Icon fontSize="small">login</Icon>,
+  //   route: "/authentication/sign-in",
+  //   component: <SignIn />,
+  // },
   // {
   //   type: "collapse",
   //   name: "Sign Up",

@@ -1,0 +1,41 @@
+import React from 'react';
+import './Slider.css'; // Import the CSS file
+
+const Slider = () => {
+    return (
+        <div className="slider">
+            {/* list Items */}
+            <div className="list">
+                <div className="item active">
+                    <img src="img1.png" alt="Slider 01" />
+                    <div className="content">
+                        <p>design</p>
+                        <h2>Slider 01</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                        </p>
+                    </div>
+                </div>
+                {/* Add other items here */}
+            </div>
+            {/* button arrows */}
+            <div className="arrows">
+                <button id="prev">{'<'}</button>
+                <button id="next">{'>'}</button>
+            </div>
+            {/* thumbnail */}
+            <div className="thumbnail">
+                <div className="item active">
+                    <img src="img1.png" alt="Slider Thumbnail" />
+                    <div className="content">
+                        Name Slider
+                    </div>
+                </div>
+                {/* Add other thumbnail items here */}
+            </div>
+        </div>
+    );
+};
+
+export default Slider;

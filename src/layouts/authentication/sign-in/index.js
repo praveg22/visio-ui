@@ -2,9 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 // react-router-dom components
-import { Link , useNavigate } from "react-router-dom";
-
-
+import { Link, useNavigate } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -45,20 +43,23 @@ function Basic() {
       const apiUrl = `${BASE_URL}/login`;
 
       const headers = {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       };
 
-      const response = await axios.post(apiUrl, {
-        email: email,
-        password: password,
-      }, { headers });
+      const response = await axios.post(
+        apiUrl,
+        {
+          email: email,
+          password: password,
+        },
+        { headers }
+      );
 
       // console.log("Sign-in successful:", response.data);
-      if(response){
-        localStorage.setItem("token", response.data.user._id)
-        navigate("/tables")
+      if (response) {
+        localStorage.setItem("token", response.data.user._id);
+        navigate("/tables");
       }
-
     } catch (error) {
       // console.log("heeeyyyy")
       console.error("Sign-in error:", error.message);
@@ -82,7 +83,7 @@ function Basic() {
           <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
             Sign in
           </MDTypography>
-          <Grid
+          {/* <Grid
             container
             spacing={3}
             justifyContent="center"
@@ -118,9 +119,9 @@ function Basic() {
                 <GoogleIcon color="inherit" />
               </MDTypography>
             </Grid>
-          </Grid>
+          </Grid> */}
         </MDBox>
-        <MDBox pt={4} pb={3} px={3}>
+        <MDBox pt={4} pb={3} px={3} mt={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
               <MDInput
