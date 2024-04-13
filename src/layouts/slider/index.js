@@ -8,10 +8,13 @@ import img6 from "./img6.jpg";
 import img7 from "./img7.jpg";
 import img8 from "./img8.jpeg";
 import "./Slider.css"
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 const Slider = () => (
+    <>
+    {/* <DashboardNavbar />  */}
   <Carousel>
     {images.map((image, index) => (
       <Carousel.Item key={index} interval={2000}>
@@ -19,6 +22,7 @@ const Slider = () => (
       </Carousel.Item>
     ))}
   </Carousel>
+  </>
 );
 
 export default Slider;

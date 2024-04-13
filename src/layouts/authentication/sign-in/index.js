@@ -58,7 +58,7 @@ function Basic() {
       // console.log("Sign-in successful:", response.data);
       if (response) {
         localStorage.setItem("token", response.data.user._id);
-        navigate("/tables");
+        navigate("/home");
       }
     } catch (error) {
       // console.log("heeeyyyy")
