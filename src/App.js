@@ -203,7 +203,7 @@ export default function App() {
                   ? brandDark
                   : brandWhite
               }
-              brandName="Visio"
+              brandName="Datafication"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -231,7 +231,7 @@ export default function App() {
                 ? brandDark
                 : brandWhite
             }
-            brandName="Visio"
+            brandName="Datafication"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}

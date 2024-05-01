@@ -81,7 +81,7 @@ function Basic() {
           textAlign="center"
         >
           <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            Sign in
+            Datafication
           </MDTypography>
           {/* <Grid
             container

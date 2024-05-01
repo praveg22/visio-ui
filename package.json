@@ -1,7 +1,18 @@
 {
-  "name": "material-dashboard-2-react",
+  "name": "Datafication",
   "version": "2.2.0",
   "private": true,
+  "main": "main.js",
+  "homepage": "./",
+  "files": [
+    "build/**/*",
+    "!build/**/*.map", 
+    "public/**/*",
+    "!public/**/*.map",
+    "src/**/*",
+    "!src/**/*.test.js",
+    "manifest.json"
+  ],
   "author": "Abhishek",
   "proxy": "http://localhost:5000",
   "license": "See license in https://www.creative-tim.com/license",
@@ -46,7 +57,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "start-electron": "electron .",
+    "build-electron": "electron-packager .",
+    "electron-build": "react-scripts build && electron ."
   },
   "browserslist": {
     "production": [
@@ -61,6 +75,7 @@
     ]
   },
   "devDependencies": {
+    "electron": "^30.0.1",
     "prettier": "2.8.8"
   },
   "overrides": {

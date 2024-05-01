@@ -23,7 +23,7 @@ function Tables() {
   // const { columns: pColumns, rows: pRows } = projectsTableData();
 
   return (
-    <DashboardLayout>
+    <DashboardLayout> 
       <DashboardNavbar />
       <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
