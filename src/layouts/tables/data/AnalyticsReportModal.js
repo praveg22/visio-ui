@@ -79,7 +79,7 @@ const AnalyticsReportModal = ({
             title="PDF Viewer"
             // src={"https://drive.google.com/file/d/1KKOLCcWd5k5WSyK3Yeg7ZOK0ciMA0inb/view?usp=sharing"} 
             // src={"https://drive.google.com/uc?id="+fileUrl+"&authuser=0"} 
-            src={"https://cloudpdf.io/view/CuagSyDsD"}
+            src={fileUrl}
             width="100%"
             height="500px" // Set height as needed
             style={{ border: "none" }} // Hide iframe border
