@@ -19,7 +19,7 @@ import authorsTableData from "layouts/tables/data/authorsTableData";
 import projectsTableData from "layouts/tables/data/projectsTableData";
 
 function Tables() {
-  const { columns, rows } = authorsTableData();
+  const { columns, rows,isLoading } = authorsTableData();
   // const { columns: pColumns, rows: pRows } = projectsTableData();
 
   return (
@@ -50,6 +50,7 @@ function Tables() {
                   entriesPerPage={false}
                   showTotalEntries={false}
                   noEndBorder
+                  isLoading={isLoading}
                 />
               </MDBox>
             </Card>

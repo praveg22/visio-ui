@@ -8,13 +8,13 @@ import "./data.css";
 const AnalyticsReportModal = ({
   title,
   fileUrl,
-//   id,
+  //   id,
   modalOpen,
   closeModal,
   data,
 }) => {
-    // console.log("key", id)
-    // console.log("data", data)
+  // console.log("key", id)
+  // console.log("data", data)
   //   const [modalOpen, setModalOpen] = useState(false);
   //   const [modalOpen, setModalOpen] = useState(false);
 
@@ -25,15 +25,15 @@ const AnalyticsReportModal = ({
   //   const closeModal = () => {
   //     setModalOpen(false);
   //   };
-// console.log(data)
-//   useEffect(() => {
-//     // Update the iframe src when fileUrl changes
-//     const iframe = document.getElementById("pdfViewer");
-//     if (iframe) {
-//       iframe.src = fileUrl;
-//     }
-//   }, [fileUrl]);
-//   console.log("fileUrl", fileUrl)
+  // console.log(data)
+  //   useEffect(() => {
+  //     // Update the iframe src when fileUrl changes
+  //     const iframe = document.getElementById("pdfViewer");
+  //     if (iframe) {
+  //       iframe.src = fileUrl;
+  //     }
+  //   }, [fileUrl]);
+  //   console.log("fileUrl", fileUrl)
 
   return (
     <>
@@ -53,7 +53,32 @@ const AnalyticsReportModal = ({
           {title}
         </MDButton>
       </MDBox> */}
-
+      {/* {this modal is commented to be used in future} */}
+      {/* <Modal
+        show={modalOpen}
+        onHide={closeModal}
+        size="lg"
+        style={{ marginTop: "65px" }}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>View Report</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <iframe
+            title="PDF Viewer"
+            src={fileUrl}
+            width="100%"
+            height="500px"
+            style={{ border: "none" }}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal> */}
+{/* 
       <Modal
         show={modalOpen}
         onHide={closeModal}
@@ -63,7 +88,7 @@ const AnalyticsReportModal = ({
         // size="xl"
         size="lg"
         // width="80%"
-        style={{ marginTop: "65px"}}
+        style={{ marginTop: "65px" }}
         // style={{ marginTop: "65px" , marginLeft:"14%", marginRight:"12%"}}
       >
         <Modal.Header closeButton>
@@ -75,23 +100,23 @@ const AnalyticsReportModal = ({
           {/* {
             window.open("https://drive.google.com/file/d/1KKOLCcWd5k5WSyK3Yeg7ZOK0ciMA0inb/view?usp=sharing")
           } */}
-          <iframe
+          {/* <iframe
             title="PDF Viewer"
-            // src={"https://drive.google.com/file/d/1KKOLCcWd5k5WSyK3Yeg7ZOK0ciMA0inb/view?usp=sharing"} 
-            // src={"https://drive.google.com/uc?id="+fileUrl+"&authuser=0"} 
+            // src={"https://drive.google.com/file/d/1KKOLCcWd5k5WSyK3Yeg7ZOK0ciMA0inb/view?usp=sharing"}
+            // src={"https://drive.google.com/uc?id="+fileUrl+"&authuser=0"}
             src={fileUrl}
             width="100%"
             height="500px" // Set height as needed
             style={{ border: "none" }} // Hide iframe border
-          />
+          /> */}
           {/* <embed src="https://app.box.com/s/ttg66y6pvawh22gnrkhu1w2uupody33v" width="100%" height="500px" type="application/pdf" /> */}
-        </Modal.Body>
-        <Modal.Footer>
+        {/* </Modal.Body> */}
+        {/* <Modal.Footer>
           <Button variant="secondary" onClick={closeModal}>
             Close
           </Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */} 
     </>
   );
 };

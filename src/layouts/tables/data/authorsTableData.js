@@ -6,21 +6,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BASE_URL } from "layouts/constants";
 import AnalyticsReportModal from "layouts/tables/data/AnalyticsReportModal";
 import "./data.css";
+// import { Audio } from 'react-loader-spinner'
 
 export default function Data() {
   const [reportData, setReportData] = useState([]);
+  const [isLoading, setIsLoading] =  useState(true)
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedFileUrl, setSelectedFileUrl] = useState("");
   const [rowReportData, setRowReportData] = useState("");
   const [selectedReport, setSelectedReport] = useState(null);
 
   useEffect(() => {
+    setIsLoading(true)
     const fetchReports = async () => {
       const user_id = localStorage.getItem("token");
       const response = await fetch(`${BASE_URL}/reports/?userId=${user_id}`);
       const data = await response.json();
       if (data) {
         setReportData(data.data);
+        setIsLoading(false)
         // console.log(data.data)
       }
     };
@@ -44,7 +48,8 @@ export default function Data() {
   };
 
   const createRows = (reportData) => {
-    return reportData.map((report, index) => {
+    // isLoading ? <div>Loading...</div>:
+      return reportData.map((report, index) => {
       // console.log("index", index);
       return {
         report: (
@@ -60,9 +65,9 @@ export default function Data() {
         report_date: (
           <MDTypography
             component="a"
-            href="#"
+            // href="#"
             variant="caption"
-            color="text"
+            color="secondary"
             fontWeight="medium"
           >
             {new Date(report.createdAt).toLocaleDateString()}
@@ -70,12 +75,12 @@ export default function Data() {
         ),
         analytics_report: (
           <>
-            <MDBox lineHeight={1} textAlign="left">
+            {/* <MDBox lineHeight={1} textAlign="left"> */}
               <MDButton
                 key={index}
                 display="block"
-                variant="caption"
-                color="text"
+                variant="text"
+                color="info" //["white","primary","secondary","info","success","warning","error","light","dark"].
                 fontWeight="medium"
                 // onClick={() =>
                 //   window.open("https://drive.google.com/file/d/1KKOLCcWd5k5WSyK3Yeg7ZOK0ciMA0inb/view?usp=sharing")
@@ -86,14 +91,16 @@ export default function Data() {
                 // onClick={() =>
                 //   window.open("https://drive.google.com/uc?id=" + report.analyticsReportFile, "_blank")
                 // }
-                onClick={(e) => {
-                  e.preventDefault();
-                  openModal(report);
-                }}
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   openModal(report);
+                // }}
+                onClick={() => window.open(report.downloadFile)}
+
               >
                 View
               </MDButton>
-            </MDBox>
+            {/* </MDBox> */}
             {/* {modalOpen && (
               <AnalyticsReportModal
                 key={index}
@@ -104,7 +111,7 @@ export default function Data() {
                 data={report}
               />
             )} */}
-            {
+            {/* {
              modalOpen && (
                 <AnalyticsReportModal
                   // id={index}
@@ -115,7 +122,7 @@ export default function Data() {
                   data={selectedReport}
                 />
               )
-            }
+            } */}
           </>
         ),
       };
@@ -132,16 +139,7 @@ export default function Data() {
         align: "left",
       },
     ],
-    rows: createRows(reportData),
-    // modal: modalOpen && (
-    //   <AnalyticsReportModal
-    //     // id={index}
-    //     title="View"
-    //     fileUrl={selectedReport?.downloadFile}
-    //     modalOpen={modalOpen}
-    //     closeModal={closeModal}
-    //     data={selectedReport}
-    //   />
-    // ),
+    rows:createRows(reportData),
+    isLoading: isLoading,
   };
 }

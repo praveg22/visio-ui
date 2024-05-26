@@ -34,7 +34,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Fetch Reports",
+    name: "Reports",
     key: "tables",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/tables",
@@ -43,7 +43,7 @@ const routes = [
   
   {
     type: "collapse",
-    name: "Generate Report",
+    name: "Upload",
     key: "generatereport",
     icon: <Icon fontSize="small">upload_view</Icon>,
     route: "/generate-report",
