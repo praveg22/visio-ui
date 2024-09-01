@@ -19,6 +19,7 @@ import Divider from "@mui/material/Divider";
 
 // @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
@@ -65,30 +66,30 @@ function Overview() {
             <Grid item xs={12} md={6} xl={4} sx={{ display: "flex" }}>
               <Divider orientation="vertical" sx={{ ml: -2, mr: 1 }} />
               <ProfileInfoCard
-                title="profile information"
-                description="Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+                title="information"
+                description="Datafication is an analytics company specializing in transforming raw data into actionable insights. We provide intuitive dashboards that empower businesses to make data-driven decisions with confidence."
                 info={{
-                  fullName: "Alec M. Thompson",
-                  mobile: "(44) 123 1234 123",
-                  email: "alecthompson@mail.com",
-                  location: "USA",
+                  // fullName: "Alec M. Thompson",
+                  email: "info.datafication@gmail.com",
+                  mobile: "7773945874",
+                  location: "Amravati",
                 }}
                 social={[
                   {
-                    link: "https://www.facebook.com/CreativeTim/",
-                    icon: <FacebookIcon />,
-                    color: "facebook",
+                    link: "https://www.linkedin.com/company/datafication-solutions/",
+                    icon: <LinkedInIcon />,
+                    color: "linkedin",
                   },
-                  {
-                    link: "https://twitter.com/creativetim",
-                    icon: <TwitterIcon />,
-                    color: "twitter",
-                  },
-                  {
-                    link: "https://www.instagram.com/creativetimofficial/",
-                    icon: <InstagramIcon />,
-                    color: "instagram",
-                  },
+                  // {
+                  //   link: "https://twitter.com/creativetim",
+                  //   icon: <TwitterIcon />,
+                  //   color: "twitter",
+                  // },
+                  // {
+                  //   link: "https://www.instagram.com/creativetimofficial/",
+                  //   icon: <InstagramIcon />,
+                  //   color: "instagram",
+                  // },
                 ]}
                 action={{ route: "", tooltip: "Edit Profile" }}
                 shadow={false}
